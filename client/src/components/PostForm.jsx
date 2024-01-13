@@ -16,7 +16,7 @@ export default function PostForm({ posts, setPosts }) {
         };
 
         axios
-            .post("http://localhost:3001/api/posts", body)
+            .post("http://192.168.1.145:3001/api/posts", body)
             .then((response) => setPosts([{ ...response.data.post }, ...posts]));
     };
 

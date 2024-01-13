@@ -10,7 +10,7 @@ export default function App() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:3001/api/posts").then((response) => setPosts(response.data.posts));
+        axios.get("http://192.168.1.145:3001/api/posts").then((response) => setPosts(response.data.posts));
     }, []);
 
     if (!posts) return <div>Loading...</div>;
