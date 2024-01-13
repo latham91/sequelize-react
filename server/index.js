@@ -7,7 +7,11 @@ require("colors");
 
 const app = express();
 app.use(express.json());
-app.use(morgan("dev"));
+
+// Development logging
+if (process.env.NODE_ENV === "development") {
+    app.use(morgan("dev"));
+}
 
 // Route imports
 const postsRouter = require("./routes/Posts");
@@ -15,7 +19,7 @@ const postsRouter = require("./routes/Posts");
 // Route middleware
 app.use("/api/posts", postsRouter);
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on http://localhost:${process.env.PORT}`.bgWhite.black);
     });
