@@ -7,6 +7,7 @@ require("colors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Development logging
 if (process.env.NODE_ENV === "development") {

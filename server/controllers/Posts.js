@@ -2,7 +2,9 @@ const { posts } = require("../models");
 
 const getAllPosts = async (req, res) => {
     try {
-        const allPosts = await posts.findAll();
+        const allPosts = await posts.findAll({
+            order: [["createdAt", "DESC"]],
+        });
 
         if (allPosts.length === 0) {
             return res.status(404).json({ success: false, count: allPosts.length, message: "No posts found" });
@@ -25,6 +27,7 @@ const createPost = async (req, res) => {
     // Create post
     try {
         const newPost = await posts.create({ title, content, username });
+
         return res.status(201).json({ success: true, message: "Post created", post: newPost });
     } catch (error) {
         return res.status(500).json({ success: false, message: "Unable to create post", error: error.message });

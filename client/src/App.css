@@ -1,0 +1,17 @@
+.App {
+    font-family: "Roboto", sans-serif;
+}
+
+.postsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

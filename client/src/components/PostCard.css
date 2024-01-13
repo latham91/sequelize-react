@@ -1,0 +1,38 @@
+.postCardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+
+    min-width: 530px;
+    max-width: 530px;
+    border: 2px solid #222222;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #333333;
+}
+
+.postCardTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #222222;
+    color: white;
+    width: 100%;
+
+    padding: 10px;
+}
+
+.postCardContent {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.postCardFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    background-color: #dfdfdf;
+}
