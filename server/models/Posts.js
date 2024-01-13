@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Post = sequelize.define("post", {
+    const Posts = sequelize.define("posts", {
         post_id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -20,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
         },
     });
 
-    return Post;
+    return Posts;
 };
