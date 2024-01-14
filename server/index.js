@@ -6,8 +6,8 @@ require("dotenv").config();
 require("colors");
 
 const app = express();
-app.use(express.json());
-app.use(cors());
+app.use(express.json()); // Body parser
+app.use(cors()); // Enable CORS
 
 // Development logging
 if (process.env.NODE_ENV === "development") {
@@ -21,6 +21,9 @@ const postsRouter = require("./routes/Posts");
 app.use("/api/posts", postsRouter);
 
 db.sequelize.sync().then(() => {
+    // Sync all models with database and start server.
+    // { force: true } to drop all tables and recreate them.
+    // { alter: true } to make changes to tables.
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on http://localhost:${process.env.PORT}`.bgWhite.black);
     });

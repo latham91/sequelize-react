@@ -1,4 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
+    // Define the Posts model
     const Posts = sequelize.define("posts", {
         post_id: {
             type: DataTypes.INTEGER,
